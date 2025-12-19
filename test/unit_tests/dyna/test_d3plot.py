@@ -342,7 +342,8 @@ class D3plotTest(TestCase):
 
                     # rewrite d3plot
                     out_filepath = os.path.join(dirpath, "yay.d3plot")
-                    d3plot1.write_d3plot(out_filepath)
+                    with self.assertLogs("lasso.dyna.d3plot", level="DEBUG"):
+                        d3plot1.write_d3plot(out_filepath)
 
                     # read it in again and compare
                     d3plot2 = D3plot(out_filepath, **d3plot_kwargs)

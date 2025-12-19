@@ -6228,7 +6228,7 @@ class D3plot:
         # write geometry file
         with open_file_or_filepath(filepath, "wb") as fp:
             n_bytes_written = 0
-            msg = "wrote {0} after {1}."
+            msg = "wrote %s after %s."
 
             # header
             n_bytes_written += self._write_header(fp, write_settings)
@@ -6309,7 +6309,7 @@ class D3plot:
                 n_bytes_written += fp.write(zero_bytes)
                 LOGGER.debug(msg, n_bytes_written, "_zero_byte_padding")
 
-            msg = "Wrote {0} bytes to geometry file."
+            msg = "Wrote %s bytes to geometry file."
             LOGGER.debug(msg, n_bytes_written)
 
             # Extra Data Types (for multi solver output)
